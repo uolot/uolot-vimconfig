@@ -27,8 +27,8 @@ set smartcase
 set incsearch
 set nohlsearch
 set showmatch
-nnoremap <F9> :hlsearch<CR>
-nnoremap <F10> :nohlsearch<CR>
+nnoremap <F9> :set hlsearch<CR>
+nnoremap <F10> :set nohlsearch<CR>
 nnoremap <Tab> %
 vnoremap <Tab> %
 
