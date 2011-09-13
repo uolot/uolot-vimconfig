@@ -45,7 +45,7 @@ set tabstop=4
 set textwidth=79
 set autoindent
 set expandtab
-set listchars=tab:▸\ ,eol:¬
+set list listchars=tab:▸\ ,extends:¬,trail:∎
 
 
 " ------ Vundle ------
@@ -62,11 +62,11 @@ Bundle 'gmarik/vundle'
 
 Bundle 'L9'
 
-Bundle 'wincent/Command-T'
-nnoremap <silent> <F3> :CommandT<CR>
-nnoremap <silent> <F4> :CommandTBuffer<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-nnoremap <silent> <F5> :CommandTFlush<CR>
+" Bundle 'wincent/Command-T'
+" nnoremap <silent> <F3> :CommandT<CR>
+" nnoremap <silent> <F4> :CommandTBuffer<CR>
+" nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+" nnoremap <silent> <F5> :CommandTFlush<CR>
 
 "Bundle 'FuzzyFinder'
 "nnoremap <Leader>b :FufBuffer<CR>
@@ -91,7 +91,7 @@ Bundle 'tpope/vim-surround'
 
 Bundle 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
-nnoremap <silent> <F6> :TagbarToggle<CR>
+nnoremap <silent> <F3> :TagbarToggle<CR>
 
 Bundle 'vim-scripts/TwitVim'
 " twitvim settings (contains: let twitvim_login="USER:PASS")
