@@ -18,7 +18,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set undofile
 " set undodir=.
-            
+
 " ------ Search options ------
 nnoremap / /\v
 vnoremap / /\v
@@ -35,7 +35,7 @@ vnoremap <Tab> %
 " ------ Lines wraping ------
 set wrap
 set formatoptions=crqn1
-set colorcolumn=80
+" set colorcolumn=80
 
 " ------ Indenting ------
 
@@ -122,8 +122,9 @@ autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 
 " ------ Colors & GUI ------
 
-let moria_style='dark'
-colorscheme moria
+"let moria_style='dark'
+"colorscheme moria
+colorscheme fruity
 
 if has('gui_running')
   set guifont=Monaco\ 10
