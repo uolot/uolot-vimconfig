@@ -93,6 +93,8 @@ Bundle 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
 nnoremap <silent> <F3> :TagbarToggle<CR>
 
+Bundle 'fs111/pydoc.vim'
+
 Bundle 'vim-scripts/TwitVim'
 " twitvim settings (contains: let twitvim_login="USER:PASS")
 source ~/.twitvim
