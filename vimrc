@@ -62,17 +62,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'L9'
 
-" Bundle 'wincent/Command-T'
-" nnoremap <silent> <F3> :CommandT<CR>
-" nnoremap <silent> <F4> :CommandTBuffer<CR>
-" nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-" nnoremap <silent> <F5> :CommandTFlush<CR>
-
-"Bundle 'FuzzyFinder'
-"nnoremap <Leader>b :FufBuffer<CR>
-"nnoremap <Leader>f :FufFile<CR>
-"nnoremap <Leader>F :FufFileWithFullCwd<CR>
-
 Bundle 'scrooloose/nerdtree'
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <F2> :NERDTreeToggle<CR>
@@ -93,7 +82,10 @@ Bundle 'majutsushi/tagbar'
 let g:tagbar_autofocus = 1
 nnoremap <silent> <F3> :TagbarToggle<CR>
 
+" TODO read docs
 Bundle 'fs111/pydoc.vim'
+
+Bundle 'amitdev/vimpy'
 
 Bundle 'vim-scripts/TwitVim'
 " twitvim settings (contains: let twitvim_login="USER:PASS")
