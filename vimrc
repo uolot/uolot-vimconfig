@@ -87,10 +87,6 @@ Bundle 'fs111/pydoc.vim'
 
 Bundle 'amitdev/vimpy'
 
-Bundle 'vim-scripts/TwitVim'
-" twitvim settings (contains: let twitvim_login="USER:PASS")
-source ~/.twitvim
-
 " -- required --
 filetype plugin indent on
 
