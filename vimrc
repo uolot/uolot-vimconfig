@@ -42,7 +42,7 @@ set formatoptions=crqn1
 set shiftwidth=4
 set tabstop=4
 set tabstop=4
-set textwidth=79
+set textwidth=100
 set autoindent
 set expandtab
 set list listchars=tab:▸\ ,extends:¬,trail:∎
@@ -109,6 +109,9 @@ nnoremap k gk
 " ------ AutoCmd ------
 
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
+autocmd FileType python setlocal makeprg=python\ %
+autocmd FileType python setlocal colorcolumn=80
+
 
 
 " ------ Colors & GUI ------
