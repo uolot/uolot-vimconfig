@@ -93,18 +93,26 @@ filetype plugin indent on
 
 " ------ Key mappings ------
 
+" make Y compatible with C, D...
 nnoremap Y y$
+
+" jump between splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" switch between buffers
 nnoremap <silent> <C-PageUp> :bp<CR>
 nnoremap <silent> <C-PageDown> :bn<CR>
 
 nnoremap j gj
 nnoremap k gk
 
+" autoclose
+imap (( ()<Esc>i
+imap [[ []<Esc>i
+imap {{ {}<Esc>i
 
 " ------ AutoCmd ------
 
