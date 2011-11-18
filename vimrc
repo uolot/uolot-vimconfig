@@ -29,8 +29,6 @@ set nohlsearch
 set showmatch
 nnoremap <F9> :set hlsearch<CR>
 nnoremap <F10> :set nohlsearch<CR>
-nnoremap <Tab> %
-vnoremap <Tab> %
 
 " ------ Lines wraping ------
 set wrap
@@ -68,13 +66,19 @@ nnoremap <silent> <F2> :NERDTreeToggle<CR>
 let NERDTreeIgnore=[ '\.pyc', 'tags' ]
 
 Bundle 'msanders/snipmate.vim'
+inoremap <c-j> <c-r>=TriggerSnippet()<cr>
+snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+
 " TODO read docs
-Bundle 'vim-scripts/TaskList.vim' 
+Bundle 'vim-scripts/TaskList.vim'
+
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mileszs/ack.vim'
+
 " TODO read docs
 Bundle 'rstacruz/sparkup'
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 
@@ -85,7 +89,13 @@ nnoremap <silent> <F3> :TagbarToggle<CR>
 " TODO read docs
 Bundle 'fs111/pydoc.vim'
 
+" TODO read docs
 Bundle 'amitdev/vimpy'
+
+Bundle 'vim-scripts/bufkill.vim'
+Bundle 'vim-scripts/vim-coffee-script'
+" fixes js indenting
+Bundle 'pangloss/vim-javascript'
 
 " -- required --
 filetype plugin indent on
@@ -105,13 +115,15 @@ nnoremap <silent> <C-PageDown> :bn<CR>
 nnoremap j gj
 nnoremap k gk
 
+nmap ; :
+vmap ; :
 
 " ------ AutoCmd ------
 
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
-
+autocmd FileType python setlocal foldmethod=indent
 
 
 " ------ Colors & GUI ------
@@ -121,6 +133,6 @@ autocmd FileType python setlocal colorcolumn=80
 colorscheme fruity
 
 if has('gui_running')
-  set guifont=Monaco\ 10
+  set guifont=mensch\ 9
 endif
 
