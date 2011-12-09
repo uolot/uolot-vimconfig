@@ -96,6 +96,9 @@ Bundle 'vim-scripts/bufkill.vim'
 Bundle 'vim-scripts/vim-coffee-script'
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
+Bundle 'alfredodeza/konira.vim'
+Bundle 'kevinw/pyflakes-vim'
+
 
 " -- required --
 filetype plugin indent on
@@ -104,6 +107,7 @@ filetype plugin indent on
 " ------ Key mappings ------
 
 nnoremap Y y$
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -124,6 +128,7 @@ autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal foldmethod=indent
+au BufRead,BufNewFile *.tpl setfiletype htmldjango
 
 
 " ------ Colors & GUI ------
@@ -133,6 +138,7 @@ autocmd FileType python setlocal foldmethod=indent
 colorscheme fruity
 
 if has('gui_running')
-  set guifont=mensch\ 9
+  " set guifont=mensch\ 10
+  set guifont=UbuntuMono\ 11
 endif
 
