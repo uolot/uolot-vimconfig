@@ -106,6 +106,7 @@ filetype plugin indent on
 
 " ------ Key mappings ------
 
+inoremap jk <Esc>
 nnoremap Y y$
 
 nnoremap <C-h> <C-w>h
