@@ -109,10 +109,6 @@ nnoremap <silent> <C-PageDown> :bn<CR>
 nnoremap j gj
 nnoremap k gk
 
-" autoclose
-imap (( ()<Esc>i
-imap [[ []<Esc>i
-imap {{ {}<Esc>i
 
 " ------ AutoCmd ------
 
