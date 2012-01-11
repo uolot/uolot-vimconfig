@@ -97,7 +97,7 @@ Bundle 'vim-scripts/vim-coffee-script'
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
 Bundle 'alfredodeza/konira.vim'
-Bundle 'kevinw/pyflakes-vim'
+" Bundle 'kevinw/pyflakes-vim'
 
 
 " -- required --
@@ -108,6 +108,10 @@ filetype plugin indent on
 
 " make Y compatible with C, D...
 nnoremap Y y$
+
+" create splits
+nnoremap <silent> ss :split<CR>
+nnoremap <silent> vv :vsplit<CR>
 
 " jump between splits
 nnoremap <C-h> <C-w>h
@@ -136,12 +140,14 @@ au BufRead,BufNewFile *.tpl setfiletype htmldjango
 
 " ------ Colors & GUI ------
 
-"let moria_style='dark'
-"colorscheme moria
 colorscheme fruity
 
 if has('gui_running')
   " set guifont=mensch\ 10
   set guifont=UbuntuMono\ 11
+
+  " hide menu- and toolbar
+  set guioptions-=m
+  set guioptions-=T
 endif
 
