@@ -97,7 +97,8 @@ Bundle 'vim-scripts/vim-coffee-script'
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
 Bundle 'alfredodeza/konira.vim'
-Bundle 'kevinw/pyflakes-vim'
+" causes errors
+" Bundle 'kevinw/pyflakes-vim'
 
 
 " -- required --
