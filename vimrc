@@ -2,14 +2,16 @@
 
 set nocompatible
 set number
-"set relativenumber
 set encoding=utf-8
 set scrolloff=4
 set showmode
 set showcmd
 set hidden
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest,list
+set wildignore+=*.pyc,*.jpg,*.png,*.swp,*.tmp
+set wildignore+=.git,.svn,tmp
+set wildignore+=.gitignore
 set novisualbell
 set cursorline
 set ttyfast
@@ -70,14 +72,14 @@ inoremap <c-j> <c-r>=TriggerSnippet()<cr>
 snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
 
 " TODO read docs
-Bundle 'vim-scripts/TaskList.vim'
+" Bundle 'vim-scripts/TaskList.vim'
 
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mileszs/ack.vim'
 
 " TODO read docs
-Bundle 'rstacruz/sparkup'
+" Bundle 'rstacruz/sparkup'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -87,7 +89,7 @@ let g:tagbar_autofocus = 1
 nnoremap <silent> <F3> :TagbarToggle<CR>
 
 " TODO read docs
-Bundle 'fs111/pydoc.vim'
+" Bundle 'fs111/pydoc.vim'
 
 " TODO read docs
 Bundle 'amitdev/vimpy'
@@ -98,6 +100,9 @@ Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'alfredodeza/konira.vim'
 
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+" let g:Powerline_symbols = 'fancy'
 
 " -- required --
 filetype plugin indent on
@@ -127,8 +132,21 @@ nnoremap <silent> <C-PageDown> :bn<CR>
 nnoremap j gj
 nnoremap k gk
 
-nmap ; :
-vmap ; :
+nnoremap ; :
+nnoremap : ;
+
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+nnoremap <silent> <F5> :call NumberToggle()<cr>
+autocmd FocusLost * :set number
+autocmd FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " ------ AutoCmd ------
 
@@ -136,12 +154,13 @@ autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal foldmethod=indent
-au BufRead,BufNewFile *.tpl setfiletype htmldjango
+autocmd FileType python setlocal omnifunc=python#Python
+autocmd BufRead,BufNewFile *.tpl setfiletype htmldjango
 
 
 " ------ Colors & GUI ------
 
-colorscheme fruity
+colorscheme sexy-railscasts
 
 if has('gui_running')
   " set guifont=mensch\ 10
