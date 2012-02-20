@@ -8,7 +8,7 @@ set showmode
 set showcmd
 set hidden
 set wildmenu
-set wildmode=longest,list
+set wildmode=list,longest
 set wildignore+=*.pyc,*.jpg,*.png,*.swp,*.tmp
 set wildignore+=.git,.svn,tmp
 set wildignore+=.gitignore
@@ -19,7 +19,6 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set undofile
-" set undodir=.
 
 " ------ Search options ------
 nnoremap / /\v
@@ -104,6 +103,11 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 " let g:Powerline_symbols = 'fancy'
 
+Bundle 'scrooloose/syntastic'
+
+" Colorscheme
+Bundle 'sjl/badwolf'
+
 " -- required --
 filetype plugin indent on
 
@@ -153,14 +157,13 @@ autocmd InsertLeave * :set relativenumber
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
-autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python setlocal omnifunc=python#Python
 autocmd BufRead,BufNewFile *.tpl setfiletype htmldjango
 
 
 " ------ Colors & GUI ------
 
-colorscheme sexy-railscasts
+colorscheme badwolf
 
 if has('gui_running')
   " set guifont=mensch\ 10
