@@ -8,7 +8,7 @@ set showmode
 set showcmd
 set hidden
 set wildmenu
-set wildmode=list,longest
+set wildmode=longest,list
 set wildignore+=*.pyc,*.jpg,*.png,*.swp,*.tmp
 set wildignore+=.git,.svn,tmp
 set wildignore+=.gitignore
@@ -158,7 +158,7 @@ autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=python#Python
-autocmd BufRead,BufNewFile *.tpl setfiletype htmldjango
+autocmd BufRead,BufNewFile *.tpl setlocal ft=htmldjango
 
 
 " ------ Colors & GUI ------
