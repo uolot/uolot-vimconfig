@@ -134,6 +134,7 @@ nnoremap k gk
 
 nnoremap ; :
 nnoremap : ;
+vmap ; :
 
 function! NumberToggle()
     if(&relativenumber == 1)
@@ -160,7 +161,7 @@ autocmd BufRead,BufNewFile *.tpl setfiletype htmldjango
 
 " ------ Colors & GUI ------
 
-colorscheme sexy-railscasts
+colorscheme badwolf
 
 if has('gui_running')
   " set guifont=mensch\ 10
