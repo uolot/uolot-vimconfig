@@ -121,7 +121,7 @@ nnoremap Y y$
 
 " reselect visual block after (un)indent
 vnoremap < <gv
-vnoremap > <gv
+vnoremap > >gv
 
 " create splits
 nnoremap <silent> ss :split<CR>
@@ -164,6 +164,9 @@ autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=python#Python
 autocmd BufRead,BufNewFile *.tpl setlocal ft=htmldjango
 
+" cursorline only in current window
+autocmd WinLeave * set nocursorline
+autocmd WinEnter * set cursorline
 
 " ------ Colors & GUI ------
 
