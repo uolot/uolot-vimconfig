@@ -61,11 +61,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'L9'
 
-Bundle 'scrooloose/nerdtree'
-nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <silent> <F2> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.pyc', 'tags' ]
-
 Bundle 'msanders/snipmate.vim'
 inoremap <c-j> <c-r>=TriggerSnippet()<cr>
 snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
@@ -82,10 +77,6 @@ Bundle 'mileszs/ack.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-
-Bundle 'majutsushi/tagbar'
-let g:tagbar_autofocus = 1
-nnoremap <silent> <F3> :TagbarToggle<CR>
 
 " TODO read docs
 " Bundle 'fs111/pydoc.vim'
@@ -156,7 +147,7 @@ autocmd FocusGained * :set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-" keep search pattern at the center of the screen.
+" keep search pattern at the center of the screen
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
