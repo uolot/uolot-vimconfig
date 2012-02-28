@@ -119,6 +119,10 @@ inoremap ;; <Esc>
 " make Y compatible with C, D...
 nnoremap Y y$
 
+" reselect visual block after (un)indent
+vnoremap < <gv
+vnoremap > <gv
+
 " create splits
 nnoremap <silent> ss :split<CR>
 nnoremap <silent> vv :vsplit<CR>
