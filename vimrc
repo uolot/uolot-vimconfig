@@ -105,8 +105,6 @@ filetype plugin indent on
 
 " ------ Key mappings ------
 
-inoremap ;; <Esc>
-
 " make Y compatible with C, D...
 nnoremap Y y$
 
@@ -162,7 +160,7 @@ autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
 autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=python#Python
-autocmd BufRead,BufNewFile *.tpl setlocal ft=htmldjango
+autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 
 " cursorline only in current window
 autocmd WinLeave * set nocursorline
