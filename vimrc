@@ -103,7 +103,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 " let g:Powerline_symbols = 'fancy'
 
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 
 " Colorscheme
 Bundle 'sjl/badwolf'
@@ -164,10 +164,11 @@ autocmd BufRead,BufNewFile *.tpl setlocal ft=htmldjango
 
 " ------ Colors & GUI ------
 
-colorscheme badwolf
+colorscheme default
 
 if has('gui_running')
-  " set guifont=mensch\ 10
+  colorscheme badwolf
+
   set guifont=UbuntuMono\ 11
 
   " hide menu- and toolbar
