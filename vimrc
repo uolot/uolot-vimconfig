@@ -61,11 +61,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'L9'
 
-Bundle 'scrooloose/nerdtree'
-nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <silent> <F2> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.pyc', 'tags' ]
-
 Bundle 'msanders/snipmate.vim'
 inoremap <c-j> <c-r>=TriggerSnippet()<cr>
 snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
@@ -82,10 +77,6 @@ Bundle 'mileszs/ack.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-
-Bundle 'majutsushi/tagbar'
-let g:tagbar_autofocus = 1
-nnoremap <silent> <F3> :TagbarToggle<CR>
 
 " TODO read docs
 " Bundle 'fs111/pydoc.vim'
@@ -118,6 +109,10 @@ inoremap ;; <Esc>
 
 " make Y compatible with C, D...
 nnoremap Y y$
+
+" reselect visual block after (un)indent
+vnoremap < <gv
+vnoremap > >gv
 
 " create splits
 nnoremap <silent> ss :split<CR>
@@ -153,6 +148,14 @@ autocmd FocusGained * :set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
+" keep search pattern at the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
 " ------ AutoCmd ------
 
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
@@ -161,6 +164,9 @@ autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=python#Python
 autocmd BufRead,BufNewFile *.tpl setlocal ft=htmldjango
 
+" cursorline only in current window
+autocmd WinLeave * set nocursorline
+autocmd WinEnter * set cursorline
 
 " ------ Colors & GUI ------
 
