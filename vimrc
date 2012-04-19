@@ -1,3 +1,16 @@
+" ------ Index ------
+" Misc. options
+" Search options
+" Lines wraping
+" Indenting
+" Vundle
+" Bundles
+" Key mappings
+" AutoCmd
+" Colors & GUI
+
+
+
 " ------ Misc. options ------
 
 set nocompatible
@@ -30,6 +43,8 @@ set nohlsearch
 set showmatch
 nnoremap <F9> :set hlsearch<CR>
 nnoremap <F10> :set nohlsearch<CR>
+set tags=./tags,tags
+set tagrelative
 
 " ------ Lines wraping ------
 set wrap
@@ -58,46 +73,47 @@ call vundle#rc()
 " ------ Bundles ------
 
 Bundle 'gmarik/vundle'
-
 Bundle 'L9'
 
-Bundle 'msanders/snipmate.vim'
-inoremap <c-j> <c-r>=TriggerSnippet()<cr>
-snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
-
-" TODO read docs
-" Bundle 'vim-scripts/TaskList.vim'
-
-Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'mileszs/ack.vim'
-
-" TODO read docs
-" Bundle 'rstacruz/sparkup'
-
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-
-" TODO read docs
-" Bundle 'fs111/pydoc.vim'
-
-" TODO read docs
-Bundle 'amitdev/vimpy'
-
 Bundle 'vim-scripts/bufkill.vim'
-Bundle 'vim-scripts/vim-coffee-script'
-" fixes js indenting
-Bundle 'pangloss/vim-javascript'
-Bundle 'alfredodeza/konira.vim'
-
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 " let g:Powerline_symbols = 'fancy'
+Bundle 'tpope/vim-fugitive'
 
-"Bundle 'scrooloose/syntastic'
 
-" Colorscheme
+" TODO: Read docs / start using :)
+" Bundle 'fs111/pydoc.vim'
+" Bundle 'vim-scripts/TaskList.vim'
+" Bundle 'ervandew/supertab'
+" Bundle 'mileszs/ack.vim'
+" Bundle 'rstacruz/sparkup'
+" Bundle 'amitdev/vimpy'
+" Bundle 'scrooloose/syntastic'
+" Bundle 'xolox/vim-easytags'
+
+" Bundle 'msanders/snipmate.vim'
+"inoremap <c-j> <c-r>=TriggerSnippet()<cr>
+"snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+
+
+" Languages
+" fixes js indenting
+Bundle 'pangloss/vim-javascript'
+Bundle 'alfredodeza/konira.vim'
+Bundle 'vim-scripts/vim-coffee-script'
+" CSS
+Bundle 'groenewege/vim-less'
+Bundle 'skammer/vim-css-color'
+Bundle 'hail2u/vim-css3-syntax'
+
+
+" Colorschemes
 Bundle 'sjl/badwolf'
+Bundle 'shawncplus/skittles_berry'
+
 
 " -- required --
 filetype plugin indent on
@@ -133,6 +149,10 @@ nnoremap ; :
 nnoremap : ;
 vmap ; :
 
+" convert table,,, to <table></table>
+imap ,,, <Esc>bdwa<<Esc>pa><Cr></<Esc>pa><Esc>kA
+
+
 function! NumberToggle()
     if(&relativenumber == 1)
         set number
@@ -157,9 +177,7 @@ nnoremap <silent> g# g#zz
 " ------ AutoCmd ------
 
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
-autocmd FileType python setlocal makeprg=python\ %
 autocmd FileType python setlocal colorcolumn=80
-autocmd FileType python setlocal omnifunc=python#Python
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 
 " cursorline only in current window
@@ -171,7 +189,8 @@ autocmd WinEnter * set cursorline
 colorscheme default
 
 if has('gui_running')
-  colorscheme badwolf
+  " colorscheme badwolf
+  colorscheme skittles_berry
 
   set guifont=UbuntuMono\ 11
 
