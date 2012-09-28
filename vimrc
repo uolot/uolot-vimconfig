@@ -83,11 +83,12 @@ Bundle 'Lokaltog/vim-powerline'
 " let g:Powerline_symbols = 'fancy'
 Bundle 'tpope/vim-fugitive'
 
-
 " TODO: Read docs / start using :)
 " Bundle 'fs111/pydoc.vim'
 " Bundle 'vim-scripts/TaskList.vim'
-" Bundle 'ervandew/supertab'
+
+Bundle 'ervandew/supertab'
+
 " Bundle 'mileszs/ack.vim'
 " Bundle 'rstacruz/sparkup'
 " Bundle 'amitdev/vimpy'
@@ -104,15 +105,26 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'pangloss/vim-javascript'
 Bundle 'alfredodeza/konira.vim'
 Bundle 'vim-scripts/vim-coffee-script'
+Bundle 'othree/html5.vim'
 " CSS
 Bundle 'groenewege/vim-less'
 Bundle 'skammer/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
+" Python
+Bundle 'klen/python-mode'
+let g:pymode_folding = 0
+let g:pymode_rope_extended_complete=1
+let g:pymode_lint_ignore = 'E501,W901,W404'
+Bundle 'jmcantrell/vim-virtualenv'
+" Scala
+Bundle 'derekwyatt/vim-scala'
 
 
 " Colorschemes
 Bundle 'sjl/badwolf'
 Bundle 'shawncplus/skittles_berry'
+Bundle 'hukl/Smyck-Color-Scheme'
+
 
 
 " -- required --
@@ -176,7 +188,7 @@ nnoremap <silent> g# g#zz
 
 " ------ AutoCmd ------
 
-autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et
+autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et wrap
 autocmd FileType python setlocal colorcolumn=80
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 
@@ -186,13 +198,16 @@ autocmd WinEnter * set cursorline
 
 " ------ Colors & GUI ------
 
-colorscheme default
+" colorscheme default
+set t_Co=256
+colorscheme skittles_berry
 
 if has('gui_running')
   " colorscheme badwolf
-  colorscheme skittles_berry
 
-  set guifont=UbuntuMono\ 11
+  " set guifont=UbuntuMono\ 11
+  set guifont=M+1mn\ 11
+  set lsp=-2
 
   " hide menu- and toolbar
   set guioptions-=m
