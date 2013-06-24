@@ -13,6 +13,7 @@
 
 " ------ Misc. options ------
 
+syntax on
 set nocompatible
 set number
 set encoding=utf-8
@@ -27,6 +28,7 @@ set wildignore+=.git,.svn,tmp
 set wildignore+=.gitignore
 set novisualbell
 set cursorline
+set cursorcolumn
 set ttyfast
 set ruler
 set backspace=indent,eol,start
@@ -76,24 +78,31 @@ Bundle 'gmarik/vundle'
 Bundle 'L9'
 
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufkill.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
+Bundle 'vim-scripts/vim-indent-object'
+Bundle 'joequery/Stupid-EasyMotion'
+Bundle 'ervandew/supertab'
+Bundle 'mileszs/ack.vim'
+
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 " TODO: Read docs / start using :)
+"Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'fs111/pydoc.vim'
 " Bundle 'vim-scripts/TaskList.vim'
-
-Bundle 'ervandew/supertab'
-
-" Bundle 'mileszs/ack.vim'
 " Bundle 'amitdev/vimpy'
 " Bundle 'scrooloose/syntastic'
 " Bundle 'xolox/vim-easytags'
+
+
+"Bundle 'davidhalter/jedi-vim'
+"let g:jedi#use_tabs_not_buffers = 0
+"let g:jedi#popup_on_dot = 0
+
 
 " Bundle 'msanders/snipmate.vim'
 "inoremap <c-j> <c-r>=TriggerSnippet()<cr>
@@ -103,28 +112,32 @@ Bundle 'ervandew/supertab'
 " Languages
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
-Bundle 'alfredodeza/konira.vim'
+Bundle 'walm/jshint.vim'
 Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'othree/html5.vim'
 " CSS
 Bundle 'groenewege/vim-less'
-Bundle 'skammer/vim-css-color'
+Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
+"Bundle 'vim-scripts/Css-Pretty'
 " Python
 Bundle 'klen/python-mode'
 let g:pymode_folding = 0
 let g:pymode_rope_extended_complete=1
-let g:pymode_lint_ignore = 'E501,W901,W404'
+let g:pymode_lint_ignore = 'E501,W901,W404,E128'
 Bundle 'jmcantrell/vim-virtualenv'
-" Scala
-Bundle 'derekwyatt/vim-scala'
+Bundle 'davidhalter/jedi-vim'
+
+" HTML - Jade
+Bundle 'digitaltoad/vim-jade'
 
 
 " Colorschemes
 Bundle 'sjl/badwolf'
 Bundle 'shawncplus/skittles_berry'
 Bundle 'hukl/Smyck-Color-Scheme'
-
+Bundle 'tomasr/molokai'
+Bundle 'veloce/vim-aldmeris'
 
 
 " -- required --
@@ -151,18 +164,19 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " switch between buffers
-nnoremap <silent> <C-PageUp> :bp<CR>
-nnoremap <silent> <C-PageDown> :bn<CR>
+nnoremap <silent> <M-PageUp> :bp<CR>
+nnoremap <silent> <M-PageDown> :bn<CR>
+" switch between tabs
+nnoremap <silent> <C-PageDown> :tabnext<CR>
+nnoremap <silent> <C-PageUp> :tabprev<CR>
 
+" perserve column
 nnoremap j gj
 nnoremap k gk
 
 nnoremap ; :
 nnoremap : ;
 vmap ; :
-
-" convert table,,, to <table></table>
-imap ,,, <Esc>bdwa<<Esc>pa><Cr></<Esc>pa><Esc>kA
 
 
 function! NumberToggle()
@@ -191,6 +205,8 @@ nnoremap <silent> g# g#zz
 autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et wrap
 autocmd FileType python setlocal colorcolumn=80
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
+" HTML indent fix (http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html)
+autocmd FileType html setlocal indentkeys-=*<Return>
 
 " cursorline only in current window
 autocmd WinLeave * set nocursorline
@@ -200,17 +216,17 @@ autocmd WinEnter * set cursorline
 
 " colorscheme default
 set t_Co=256
-colorscheme skittles_berry
+colorscheme aldmeris
 
 if has('gui_running')
   " colorscheme badwolf
+  "colorscheme molokai
 
   " set guifont=UbuntuMono\ 11
-  set guifont=M+1mn\ 11
-  set lsp=-2
+  "set guifont=M+1mn\ 11
+  "set lsp=-2
 
   " hide menu- and toolbar
   set guioptions-=m
   set guioptions-=T
 endif
-
