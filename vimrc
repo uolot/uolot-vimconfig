@@ -86,7 +86,12 @@ Bundle 'vim-scripts/vim-indent-object'
 Bundle 'joequery/Stupid-EasyMotion'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/vim-indent-object'
+Bundle 'joequery/Stupid-EasyMotion'
 
+" Disabled bundles
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
@@ -98,11 +103,9 @@ Bundle 'airblade/vim-gitgutter'
 " Bundle 'scrooloose/syntastic'
 " Bundle 'xolox/vim-easytags'
 
-
 "Bundle 'davidhalter/jedi-vim'
 "let g:jedi#use_tabs_not_buffers = 0
 "let g:jedi#popup_on_dot = 0
-
 
 " Bundle 'msanders/snipmate.vim'
 "inoremap <c-j> <c-r>=TriggerSnippet()<cr>
@@ -115,6 +118,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'walm/jshint.vim'
 Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'othree/html5.vim'
+"Bundle 'alfredodeza/konira.vim'
 " CSS
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
