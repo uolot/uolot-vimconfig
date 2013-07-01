@@ -1,9 +1,7 @@
-Execute
+# Installation
 
-    $ ln -s ~/.vim/vimrc ~/.vimrc
-    $ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+1. Clone this repo
 
-Run vim, call
-
-    :BundleInstall
+2. Run
+    $ ./setup.sh
 
