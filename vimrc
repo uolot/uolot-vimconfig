@@ -28,7 +28,6 @@ set wildignore+=.git,.svn,tmp
 set wildignore+=.gitignore
 set novisualbell
 set cursorline
-set cursorcolumn
 set ttyfast
 set ruler
 set backspace=indent,eol,start
