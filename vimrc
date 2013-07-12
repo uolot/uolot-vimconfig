@@ -77,6 +77,11 @@ Bundle 'gmarik/vundle'
 Bundle 'L9'
 
 Bundle 'bling/vim-airline'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+"let g:airline_enable_fugitive=0
+"let g:airline_enable_syntastic=0
+
 Bundle 'ervandew/supertab'
 
 " Disabled bundles
