@@ -76,10 +76,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
-Bundle 'vim-scripts/vim-indent-object'
+Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
+
+" Disabled bundles
 Bundle 'airblade/vim-gitgutter'
 
 " TODO: Read docs / start using :)
@@ -90,9 +90,6 @@ Bundle 'airblade/vim-gitgutter'
 " Bundle 'scrooloose/syntastic'
 " Bundle 'xolox/vim-easytags'
 
-"Bundle 'davidhalter/jedi-vim'
-"let g:jedi#use_tabs_not_buffers = 0
-"let g:jedi#popup_on_dot = 0
 
 " Bundle 'msanders/snipmate.vim'
 "inoremap <c-j> <c-r>=TriggerSnippet()<cr>
@@ -105,7 +102,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'walm/jshint.vim'
 Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'othree/html5.vim'
-"Bundle 'alfredodeza/konira.vim'
 " CSS
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
@@ -115,8 +111,10 @@ Bundle 'hail2u/vim-css3-syntax'
 "let g:pymode_folding = 0
 "let g:pymode_rope_extended_complete=1
 "let g:pymode_lint_ignore = 'E501,W901,W404,E128'
-"Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'davidhalter/jedi-vim'
+"let g:jedi#use_tabs_not_buffers = 0
+"let g:jedi#popup_on_dot = 0
 
 " HTML - Jade
 Bundle 'digitaltoad/vim-jade'
