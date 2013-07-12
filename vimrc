@@ -76,22 +76,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/bufkill.vim'
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
 Bundle 'vim-scripts/vim-indent-object'
-Bundle 'joequery/Stupid-EasyMotion'
 Bundle 'ervandew/supertab'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/vim-indent-object'
-Bundle 'joequery/Stupid-EasyMotion'
-
-" Disabled bundles
-"Bundle 'scrooloose/nerdtree'
-"Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
 " TODO: Read docs / start using :)
@@ -122,14 +110,13 @@ Bundle 'othree/html5.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-"Bundle 'vim-scripts/Css-Pretty'
 " Python
-Bundle 'klen/python-mode'
-let g:pymode_folding = 0
-let g:pymode_rope_extended_complete=1
-let g:pymode_lint_ignore = 'E501,W901,W404,E128'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'davidhalter/jedi-vim'
+"Bundle 'klen/python-mode'
+"let g:pymode_folding = 0
+"let g:pymode_rope_extended_complete=1
+"let g:pymode_lint_ignore = 'E501,W901,W404,E128'
+"Bundle 'jmcantrell/vim-virtualenv'
+"Bundle 'davidhalter/jedi-vim'
 
 " HTML - Jade
 Bundle 'digitaltoad/vim-jade'
