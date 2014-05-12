@@ -102,15 +102,18 @@ Bundle 'airblade/vim-gitgutter'
 
 
 " Languages
+
+" JS
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
 Bundle 'walm/jshint.vim'
 Bundle 'vim-scripts/vim-coffee-script'
-Bundle 'othree/html5.vim'
+
 " CSS
 Bundle 'groenewege/vim-less'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
+
 " Python
 "Bundle 'klen/python-mode'
 "let g:pymode_folding = 0
@@ -121,9 +124,13 @@ Bundle 'jmcantrell/vim-virtualenv'
 "let g:jedi#use_tabs_not_buffers = 0
 "let g:jedi#popup_on_dot = 0
 
-" HTML - Jade
+" HTML
+Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
 
+" Clojure
+Bundle 'tpope/vim-fireplace'
+Bundle 'Raimondi/delimitMate'
 
 " Colorschemes
 Bundle 'sjl/badwolf'
@@ -131,6 +138,8 @@ Bundle 'shawncplus/skittles_berry'
 Bundle 'hukl/Smyck-Color-Scheme'
 Bundle 'tomasr/molokai'
 Bundle 'veloce/vim-aldmeris'
+Bundle 'vim-scripts/IDLE'
+Bundle 'therubymug/vim-pyte'
 
 
 " -- required --
@@ -157,11 +166,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " switch between buffers
-nnoremap <silent> <M-PageUp> :bp<CR>
-nnoremap <silent> <M-PageDown> :bn<CR>
+nnoremap <silent> <C-Left> :bp<CR>
+nnoremap <silent> <C-Right> :bn<CR>
 " switch between tabs
-nnoremap <silent> <C-PageDown> :tabnext<CR>
-nnoremap <silent> <C-PageUp> :tabprev<CR>
+nnoremap <silent> <C-Down> :tabnext<CR>
+nnoremap <silent> <C-Up> :tabprev<CR>
 
 " perserve column
 nnoremap j gj
@@ -215,11 +224,19 @@ if has('gui_running')
   " colorscheme badwolf
   "colorscheme molokai
 
-  " set guifont=UbuntuMono\ 11
+  set guifont=Consolas\ 10
   "set guifont=M+1mn\ 11
-  "set lsp=-2
+  set lsp=-2
 
-  " hide menu- and toolbar
+  " hide menu and toolbar
   set guioptions-=m
   set guioptions-=T
+
+  " disable scrollbars
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=b
 endif
+"2345678912345678912345678912345678912345678912345678912345678900000001234567890
