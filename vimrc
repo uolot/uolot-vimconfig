@@ -76,6 +76,25 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
+Bundle 'unite.vim'
+nnoremap <silent> <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+endif
+
+"nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
+"nnoremap <Leader>g :Unite grep:.<cr>
+"nnoremap <Leader>b :Unite -quick-match buffer<cr>
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+Bundle 'FuzzyFinder'
+nnoremap <Leader>f :FufCoverageFile<CR>
+nnoremap <Leader>b :FufBuffer<CR>
+nnoremap <Leader>l :FufLine<CR>
+
 Bundle 'bling/vim-airline'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -83,9 +102,10 @@ let g:airline_right_sep=''
 "let g:airline_enable_syntastic=0
 
 Bundle 'ervandew/supertab'
+" Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-gitgutter'
 
 " Disabled bundles
-Bundle 'airblade/vim-gitgutter'
 
 " TODO: Read docs / start using :)
 "Bundle 'Lokaltog/vim-easymotion'
