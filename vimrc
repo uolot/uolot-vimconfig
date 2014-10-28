@@ -113,6 +113,9 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Languages
 
+" Python
+Bundle 'hynek/vim-python-pep8-indent'
+
 " JS
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
@@ -131,7 +134,7 @@ Bundle 'digitaltoad/vim-jade'
 Plugin 'gregsexton/MatchTag'
 
 " Clojure
-Plugin 'VimClojure'
+"Plugin 'VimClojure'
 Bundle 'tpope/vim-fireplace'
 Bundle 'guns/vim-clojure-static'
 "Bundle 'Raimondi/delimitMate'
@@ -206,7 +209,7 @@ nnoremap <silent> g# g#zz
 
 " ------ AutoCmd ------
 
-autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et wrap
+autocmd FileType python setlocal sw=4 sts=4 ts=4 tw=80 ai et wrap
 autocmd FileType python setlocal colorcolumn=80
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 " HTML indent fix (http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html)
