@@ -56,7 +56,6 @@ set formatoptions=crqn1
 
 set shiftwidth=4
 set tabstop=4
-set tabstop=4
 set textwidth=100
 set autoindent
 set expandtab
@@ -97,34 +96,35 @@ Plugin 'MarcWeber/vim-addon-local-vimrc'
 Plugin 'chreekat/vim-paren-crosshairs'
 " guess file indentation style
 Plugin 'conormcd/matchindent.vim'
-" gvim colorschemes in terminal
-Plugin 'godlygeek/csapprox'
 " ececute buffer / selection
 Plugin 'JarrodCTaylor/vim-shell-executor'
 " swap windows with \ww
 Plugin 'wesQ3/vim-windowswap'
 
-Plugin 'kien/rainbow_parentheses.vim'
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"Plugin 'kien/rainbow_parentheses.vim'
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 " Languages
 
 " Python
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'django-custom'
 
 " JS
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'mxw/vim-jsx'
+Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs,react'
 
 " CSS
-Bundle 'ap/vim-css-color'
+"Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 
@@ -132,6 +132,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
 Plugin 'gregsexton/MatchTag'
+"Plugin 'mustache/vim-mustache-handlebars'
 
 " Clojure
 "Plugin 'VimClojure'
@@ -139,7 +140,7 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'guns/vim-clojure-static'
 "Bundle 'Raimondi/delimitMate'
 Plugin 'amdt/vim-niji'
-Plugin 'guns/vim-clojure-highlight'
+"Plugin 'guns/vim-clojure-highlight'
 
 " Colorschemes
 Bundle 'sjl/badwolf'
@@ -209,8 +210,10 @@ nnoremap <silent> g# g#zz
 
 " ------ AutoCmd ------
 
-autocmd FileType python setlocal sw=4 sts=4 ts=4 tw=80 ai et wrap
+autocmd FileType python setlocal sw=4 sts=4 ts=4 ai et wrap
 autocmd FileType python setlocal colorcolumn=80
+autocmd FileType html,htmldjango setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 " HTML indent fix (http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html)
 autocmd FileType html setlocal indentkeys-=*<Return>
@@ -223,24 +226,9 @@ autocmd WinEnter * set cursorline
 
 " colorscheme default
 set t_Co=256
+set background=dark
 colorscheme aldmeris
 
-if has('gui_running')
-  " colorscheme badwolf
-  "colorscheme molokai
+"colorscheme kalisi
+"highlight ColorColumn ctermbg=8 guibg=gray22
 
-  "set guifont=Consolas\ 10
-  "set guifont=M+1mn\ 11
-  set lsp=-2
-
-  " hide menu and toolbar
-  set guioptions-=m
-  set guioptions-=T
-
-  " disable scrollbars
-  set guioptions-=r
-  set guioptions-=R
-  set guioptions-=l
-  set guioptions-=L
-  set guioptions-=b
-endif
