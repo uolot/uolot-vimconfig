@@ -85,10 +85,13 @@ if executable('pt')
   let g:unite_source_grep_encoding = 'utf-8'
 endif
 
+
 "nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
 "nnoremap <Leader>g :Unite grep:.<cr>
 "nnoremap <Leader>b :Unite -quick-match buffer<cr>
 "call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+Bundle 'mileszs/ack.vim'
 
 Bundle 'FuzzyFinder'
 nnoremap <Leader>f :FufCoverageFile<CR>
@@ -143,6 +146,9 @@ Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'davidhalter/jedi-vim'
 "let g:jedi#use_tabs_not_buffers = 0
 "let g:jedi#popup_on_dot = 0
+let g:pyindent_open_paren        = '&sw'
+let g:pyindent_nested_paren      = '&sw'
+let g:pyindent_continue          = '&sw'
 
 " HTML
 Bundle 'othree/html5.vim'
