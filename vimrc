@@ -119,7 +119,7 @@ Bundle 'django-custom'
 Bundle 'pangloss/vim-javascript'
 Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'mxw/vim-jsx'
-Plugin 'othree/yajs.vim'
+"Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs,react'
 
