@@ -25,7 +25,6 @@ set wildmenu
 set wildmode=longest,list
 set wildignore+=*.pyc,*.jpg,*.png,*.swp,*.tmp
 set wildignore+=.git,.svn,tmp
-set wildignore+=.gitignore
 set novisualbell
 set cursorline
 set ttyfast
@@ -33,6 +32,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set undofile
+set tabline=0
 
 " ------ Search options ------
 nnoremap / /\v
@@ -56,7 +56,6 @@ set formatoptions=crqn1
 
 set shiftwidth=4
 set tabstop=4
-set tabstop=4
 set textwidth=100
 set autoindent
 set expandtab
@@ -76,23 +75,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-Bundle 'unite.vim'
-nnoremap <silent> <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-if executable('pt')
-  let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-  let g:unite_source_grep_recursive_opt = ''
-  let g:unite_source_grep_encoding = 'utf-8'
-endif
-
-
-"nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
-"nnoremap <Leader>g :Unite grep:.<cr>
-"nnoremap <Leader>b :Unite -quick-match buffer<cr>
-"call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-Bundle 'mileszs/ack.vim'
-
 Bundle 'FuzzyFinder'
 nnoremap <Leader>f :FufCoverageFile<CR>
 nnoremap <Leader>b :FufBuffer<CR>
@@ -104,68 +86,66 @@ let g:airline_right_sep=''
 "let g:airline_enable_fugitive=0
 "let g:airline_enable_syntastic=0
 
+Plugin 'szw/vim-ctrlspace'
+let g:ctrlspace_use_tabline=1
+
 Bundle 'ervandew/supertab'
-" Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
+Plugin 'MarcWeber/vim-addon-local-vimrc'
+" add column highlight when on paren
+Plugin 'chreekat/vim-paren-crosshairs'
+" guess file indentation style
+Plugin 'conormcd/matchindent.vim'
+" ececute buffer / selection
+Plugin 'JarrodCTaylor/vim-shell-executor'
+" swap windows with \ww
+Plugin 'wesQ3/vim-windowswap'
 
-" Disabled bundles
-
-" TODO: Read docs / start using :)
-"Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'fs111/pydoc.vim'
-" Bundle 'vim-scripts/TaskList.vim'
-" Bundle 'amitdev/vimpy'
-" Bundle 'scrooloose/syntastic'
-" Bundle 'xolox/vim-easytags'
-
-
-" Bundle 'msanders/snipmate.vim'
-"inoremap <c-j> <c-r>=TriggerSnippet()<cr>
-"snoremap <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+"Plugin 'kien/rainbow_parentheses.vim'
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 " Languages
 
+" Python
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'django-custom'
+
 " JS
 " fixes js indenting
 Bundle 'pangloss/vim-javascript'
-Bundle 'walm/jshint.vim'
 Bundle 'vim-scripts/vim-coffee-script'
+Bundle 'mxw/vim-jsx'
+"Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs,react'
 
 " CSS
-Bundle 'groenewege/vim-less'
-Bundle 'ap/vim-css-color'
+"Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-
-" Python
-"Bundle 'klen/python-mode'
-"let g:pymode_folding = 0
-"let g:pymode_rope_extended_complete=1
-"let g:pymode_lint_ignore = 'E501,W901,W404,E128'
-Bundle 'jmcantrell/vim-virtualenv'
-"Bundle 'davidhalter/jedi-vim'
-"let g:jedi#use_tabs_not_buffers = 0
-"let g:jedi#popup_on_dot = 0
-let g:pyindent_open_paren        = '&sw'
-let g:pyindent_nested_paren      = '&sw'
-let g:pyindent_continue          = '&sw'
+Bundle 'groenewege/vim-less'
 
 " HTML
 Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
+Plugin 'gregsexton/MatchTag'
+"Plugin 'mustache/vim-mustache-handlebars'
 
 " Clojure
+"Plugin 'VimClojure'
 Bundle 'tpope/vim-fireplace'
-Bundle 'Raimondi/delimitMate'
+Bundle 'guns/vim-clojure-static'
+"Bundle 'Raimondi/delimitMate'
+Plugin 'amdt/vim-niji'
+"Plugin 'guns/vim-clojure-highlight'
 
 " Colorschemes
 Bundle 'sjl/badwolf'
-Bundle 'shawncplus/skittles_berry'
-Bundle 'hukl/Smyck-Color-Scheme'
 Bundle 'tomasr/molokai'
 Bundle 'veloce/vim-aldmeris'
-Bundle 'vim-scripts/IDLE'
-Bundle 'therubymug/vim-pyte'
 
 
 " -- required --
@@ -230,8 +210,10 @@ nnoremap <silent> g# g#zz
 
 " ------ AutoCmd ------
 
-autocmd FileType python setlocal sw=4 sts=4 ts=8 tw=79 ai et wrap
+autocmd FileType python setlocal sw=4 sts=4 ts=4 ai et wrap
 autocmd FileType python setlocal colorcolumn=80
+autocmd FileType html,htmldjango setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2
 autocmd BufRead,BufNewFile *.tpl,*.html setlocal ft=htmldjango
 " HTML indent fix (http://morearty.com/blog/2013/01/22/fixing-vims-indenting-of-html-files.html)
 autocmd FileType html setlocal indentkeys-=*<Return>
@@ -244,25 +226,9 @@ autocmd WinEnter * set cursorline
 
 " colorscheme default
 set t_Co=256
+set background=dark
 colorscheme aldmeris
 
-if has('gui_running')
-  " colorscheme badwolf
-  "colorscheme molokai
+"colorscheme kalisi
+"highlight ColorColumn ctermbg=8 guibg=gray22
 
-  set guifont=Consolas\ 10
-  "set guifont=M+1mn\ 11
-  set lsp=-2
-
-  " hide menu and toolbar
-  set guioptions-=m
-  set guioptions-=T
-
-  " disable scrollbars
-  set guioptions-=r
-  set guioptions-=R
-  set guioptions-=l
-  set guioptions-=L
-  set guioptions-=b
-endif
-"2345678912345678912345678912345678912345678912345678912345678900000001234567890
