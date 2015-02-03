@@ -33,6 +33,9 @@ set backspace=indent,eol,start
 set laststatus=2
 set undofile
 set tabline=0
+" keep temporary files in tempdir
+set backupdir=$TEMP//
+set directory=$TEMP//
 
 " ------ Search options ------
 nnoremap / /\v
