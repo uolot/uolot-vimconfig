@@ -34,8 +34,8 @@ set laststatus=2
 set undofile
 set tabline=0
 " keep temporary files in tempdir
-set backupdir=$TEMP//
-set directory=$TEMP//
+set backupdir=/tmp
+set directory=/tmp
 
 " ------ Search options ------
 nnoremap / /\v
