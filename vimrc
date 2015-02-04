@@ -115,7 +115,7 @@ Plugin 'wesQ3/vim-windowswap'
 
 " Python
 Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'django-custom'
+"Bundle 'django-custom'
 
 " JS
 " fixes js indenting
@@ -144,6 +144,9 @@ Bundle 'guns/vim-clojure-static'
 "Bundle 'Raimondi/delimitMate'
 Plugin 'amdt/vim-niji'
 "Plugin 'guns/vim-clojure-highlight'
+
+" PHP
+Plugin 'xsbeats/vim-blade'
 
 " Colorschemes
 Bundle 'sjl/badwolf'
