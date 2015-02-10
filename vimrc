@@ -91,6 +91,7 @@ let g:airline_right_sep=''
 
 Plugin 'szw/vim-ctrlspace'
 let g:ctrlspace_use_tabline=1
+let g:ctrlspace_use_use_ruby_bindings=1
 
 Bundle 'ervandew/supertab'
 Bundle 'airblade/vim-gitgutter'
@@ -147,6 +148,8 @@ Plugin 'amdt/vim-niji'
 
 " PHP
 Plugin 'xsbeats/vim-blade'
+autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=blade " Fix blade auto-indent
+
 
 " Colorschemes
 Bundle 'sjl/badwolf'
@@ -157,6 +160,8 @@ Bundle 'veloce/vim-aldmeris'
 " -- required --
 filetype plugin indent on
 
+" enable omnicompletion
+set omnifunc=syntaxcomplete#Complete
 
 " ------ Key mappings ------
 
