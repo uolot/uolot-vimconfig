@@ -78,10 +78,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-Bundle 'FuzzyFinder'
-nnoremap <Leader>f :FufCoverageFile<CR>
-nnoremap <Leader>b :FufBuffer<CR>
-nnoremap <Leader>l :FufLine<CR>
+"Bundle 'FuzzyFinder'
+"nnoremap <Leader>f :FufCoverageFile<CR>
+"nnoremap <Leader>b :FufBuffer<CR>
+"nnoremap <Leader>l :FufLine<CR>
+
+Bundle 'ctrlpvim/ctrlp.vim'
+set rtp^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_working_path_mode="w"
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 Bundle 'bling/vim-airline'
 let g:airline_left_sep=''
@@ -92,6 +105,10 @@ let g:airline_right_sep=''
 Plugin 'szw/vim-ctrlspace'
 let g:ctrlspace_use_tabline=1
 let g:ctrlspace_use_use_ruby_bindings=1
+
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+noremap <Leader>n :NERDTreeToggle<CR>
 
 Bundle 'ervandew/supertab'
 Bundle 'airblade/vim-gitgutter'
