@@ -154,6 +154,7 @@ Bundle 'othree/html5.vim'
 Bundle 'digitaltoad/vim-jade'
 Plugin 'gregsexton/MatchTag'
 "Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mattn/emmet-vim'
 
 " Clojure
 "Plugin 'VimClojure'
