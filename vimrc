@@ -168,6 +168,12 @@ Plugin 'amdt/vim-niji'
 Plugin 'xsbeats/vim-blade'
 autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=blade " Fix blade auto-indent
 
+" markdown
+"requires: $ npm -g install instant-markdown-d
+Plugin 'suan/vim-instant-markdown'
+let g:instant_markdown_autostart = 0
+noremap <Leader>md :InstantMarkdownPreview<CR>
+
 
 " Colorschemes
 Bundle 'sjl/badwolf'
