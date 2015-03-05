@@ -78,11 +78,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
 
-"Bundle 'FuzzyFinder'
-"nnoremap <Leader>f :FufCoverageFile<CR>
-"nnoremap <Leader>b :FufBuffer<CR>
-"nnoremap <Leader>l :FufLine<CR>
-
 Bundle 'ctrlpvim/ctrlp.vim'
 set rtp^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files=0
@@ -102,16 +97,12 @@ let g:airline_right_sep=''
 "let g:airline_enable_fugitive=0
 "let g:airline_enable_syntastic=0
 
-Plugin 'szw/vim-ctrlspace'
-let g:ctrlspace_use_tabline=1
-let g:ctrlspace_use_use_ruby_bindings=1
-
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 noremap <Leader>n :NERDTreeToggle<CR>
 
 Bundle 'ervandew/supertab'
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
 " add column highlight when on paren
 Plugin 'chreekat/vim-paren-crosshairs'
@@ -166,7 +157,11 @@ Plugin 'amdt/vim-niji'
 
 " PHP
 Plugin 'xsbeats/vim-blade'
-autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=blade " Fix blade auto-indent
+autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=blade | set omnifunc=htmlcomplete#CompleteTags " Fix blade auto-indent
+"patched ctags
+"https://github.com/shawncplus/phpcomplete.vim/wiki/Patched-ctags
+Bundle 'shawncplus/phpcomplete.vim'
+let g:phpcomplete_parse_docblock_comments = 1
 
 " markdown
 "requires: $ npm -g install instant-markdown-d
